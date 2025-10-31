@@ -1,55 +1,28 @@
 package model;
 
 public class Product {
-    private int id;
+    private String id;
     private String name;
+    private String category;
     private int quantity;
-    private int reorderThreshold;
-    private Category category;
 
-    public Product(int id, String name, int quantity, int reorderThreshold, Category category) {
+    public Product(String id, String name, String category, int quantity, int threshold) {
         this.id = id;
         this.name = name;
-        this.quantity = quantity;
-        this.reorderThreshold = reorderThreshold;
         this.category = category;
+        this.quantity = quantity;
+        this.threshold = threshold;
     }
 
-    // --- Getters and Setters ---
-    public int getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public int getReorderThreshold() {
-        return reorderThreshold;
-    }
-
-    public Category getCategory() {
-        return category;
-    }
-
-    // --- Business Methods ---
-    public void increaseQuantity(int amount) {
-        if (amount > 0)
-            this.quantity += amount;
-    }
-
-    public void decreaseQuantity(int amount) {
-        if (amount > 0 && this.quantity >= amount)
-            this.quantity -= amount;
-    }
+    public String getId() { return id; }
+    public String getName() { return name; }
+    public String getCategory() { return category; }
+    public int getQuantity() { return quantity; }
+  
+    public void setQuantity(int quantity) { this.quantity = quantity; }
 
     @Override
-    public String toString() {
-        return String.format("Product[ID=%d, Name=%s, Qty=%d, Threshold=%d, Category=%s]",
-                id, name, quantity, reorderThreshold, category);
+   public String toString() {
+        return "Product{id='" + id + "', name='" + name + "', category='" + category + "', qty=" + quantity + "}";
     }
 }
