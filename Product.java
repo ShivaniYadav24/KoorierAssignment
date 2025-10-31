@@ -6,12 +6,12 @@ public class Product {
     private String category;
     private int quantity;
 
-    public Product(String id, String name, String category, int quantity, int threshold) {
+    public Product(String id, String name, String category, int quantity, ) {
         this.id = id;
         this.name = name;
         this.category = category;
         this.quantity = quantity;
-        this.threshold = threshold;
+      
     }
 
     public String getId() { return id; }
@@ -26,3 +26,4 @@ public class Product {
         return "Product{id='" + id + "', name='" + name + "', category='" + category + "', qty=" + quantity + "}";
     }
 }
+
